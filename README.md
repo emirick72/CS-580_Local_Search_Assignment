@@ -1,6 +1,7 @@
 # Local Search Using Hill Climbing Algorithm
-------------------------------
+
 Note: For executing both parts of this assignment, the user must have Python, `numpy` and `matplotlib` installed on their machine.
+
 ------------------------------
 ## Part 1
 Part 1 of the Local Search assignment shows the optimization of the Eggholder function with real parameters.
