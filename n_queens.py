@@ -104,7 +104,7 @@ def plot_boards(runs_data, n):
         ax_final.axis('off')
 
     plt.suptitle(f"N-Queens (N={n}) - First 10 Runs (Initial vs. Final)", fontsize=14, y=1.02)
-    plt.tight_layout()
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
     plt.show()
 
 if __name__ == "__main__":
