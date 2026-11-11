@@ -66,7 +66,7 @@ def plot_distribution(minima_values):
     plt.hist(minima_values, bins=20, color='skyblue', edgecolor='black',alpha=0.8)
     plt.title('Distribution of Minima Found by Hill Climbing (100 Runs)')
     plt.xlabel('Objective Function Value (Eggholder Minimum)')
-    plt.ylable('Frequency')
+    plt.ylabel('Frequency')
     plt.grid(True, linestyle='--', alpha=0.6)
     plt.tight_layout()
     plt.show()
