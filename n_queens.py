@@ -84,10 +84,14 @@ def plot_boards(runs_data, n):
     """
     Plot the initial and finals states of the game boards for the first 10 runs.
     """
-    fig, axes = plt.subplots(10, 2, figsize=(6, 25))
+    fig, axes = plt.subplots(5, 4, figsize=(12, 14))
 
     for i, (init_state, final_state, is_solved) in enumerate(runs_data):
-        ax_init = axes[i, 0]
+        row_idx = i % 5
+        col_offset = (i // 5) * 2
+
+        # Initial state plots
+        ax_init = axes[row_idx, col_offset]
         board_init = np.zeros((n, n))
         for col, row in enumerate(init_state):
             board_init[row, col] = 1
@@ -95,7 +99,8 @@ def plot_boards(runs_data, n):
         ax_init.set_title(f"Run {i+1} Initial", fontsize=9)
         ax_init.axis('off')
 
-        ax_final = axes[i, 1]
+        # Final state plots
+        ax_final = axes[row_idx, col_offset + 1]
         board_final = np.zeros((n, n))
         for col, row, in enumerate(final_state):
             board_final[row, col] = 1
@@ -103,8 +108,9 @@ def plot_boards(runs_data, n):
         ax_final.set_title(f"Run {i+1} Final ({'Solved' if is_solved else 'Stuck'})", fontsize=9)
         ax_final.axis('off')
 
-    plt.suptitle(f"N-Queens (N={n}) - First 10 Runs (Initial vs. Final)", fontsize=14, y=1.02)
-    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    plt.subplots_adjust(top=0.92)
+    plt.suptitle(f"N-Queens (N={n}) - First 10 Runs (Initial vs. Final)", fontsize=14)
+    plt.tight_layout(rect=[0, 0, 1, 0.92])
     plt.show()
 
 if __name__ == "__main__":
